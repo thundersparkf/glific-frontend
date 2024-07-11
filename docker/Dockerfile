@@ -5,8 +5,8 @@ WORKDIR /app/glific-frontend
 
 # Install dependencies
 RUN apk add --no-cache --update \
-    build-base git curl vim zsh inotify-tools openssl ncurses-libs 
- 
+    build-base git curl vim zsh inotify-tools openssl ncurses-libs
+
 # Copy package.json and yarn.lock to the working directory
 COPY package.json yarn.lock ./
 COPY .env .env
@@ -33,7 +33,7 @@ COPY . /app/glific-frontend/
 EXPOSE 3000
 
 #CMD ["ls", "-l"]
-CMD ["yarn", "dev", "--host", "0.0.0.0", "--port", "3000"]
+CMD ["yarn", "docker-dev", "--host", "0.0.0.0", "--port", "3000"]
 
 # Production build stage. Creates a build folder with the optimised build files
 FROM node:18-alpine AS production

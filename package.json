@@ -68,7 +68,7 @@
   },
   "scripts": {
     "setup": "yarn install --force && yarn run floweditor",
-    "dev": "vite",
+    "dev": "vite --host=glific.test",
     "build": "yarn setup && yarn vite build",
     "serve": "vite preview",
     "cy:run": "cypress run",
@@ -77,7 +77,8 @@
     "extract-translations": "i18next",
     "test": "vitest watch",
     "test:no-watch": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "docker-dev" : "vite"
   },
   "engines": {
     "node": ">=16.15.0"
